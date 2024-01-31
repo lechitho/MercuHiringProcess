@@ -1,0 +1,72 @@
+[
+  {
+    "Name": "Isabella Johnson",
+    "Stage": "Applied",
+    "Phone": "0906556941",
+    "Email": "IsabellaJohnson@example.com",
+    "Id": "1d5dc610-d43c-4bbf-a67c-6bd5b0936670"
+  },
+  {
+    "Name": "Sophia Anderson",
+    "Stage": "Applied",
+    "Phone": "4567890123",
+    "Email": "sophiaanderson@example.com",
+    "Id": "8fbe4d03-7e5e-4612-a4d0-2f5d1e577892"
+  },
+  {
+    "Name": "Oliver Taylor",
+    "Stage": "Applied",
+    "Phone": "3456789012",
+    "Email": "olivertaylor@example.com",
+    "Id": "5cc090e0-2fe1-4bf7-ae90-7f1b794cff59"
+  },
+  {
+    "Name": "Bob Johnson",
+    "Stage": "Applied",
+    "Phone": "1122334455",
+    "Email": "bobjohnson@example.com",
+    "Id": "2d530096-a007-4944-8c6b-1421624f784d"
+  },
+  {
+    "Name": "John Doe",
+    "Stage": "Interviewing",
+    "Phone": "1234567890",
+    "Email": "johndoe@example.com",
+    "Id": "8f5883cd-95c7-4d0f-99ac-2a838c964844"
+  },
+  {
+    "Name": "Emma Brown",
+    "Stage": "Interviewing",
+    "Phone": "2345678901",
+    "Email": "emmabrown@example.com",
+    "Id": "0c96170a-8970-4873-9819-878f31b814d0"
+  },
+  {
+    "Name": "Mia Thomas",
+    "Stage": "Hired",
+    "Phone": "5678901234",
+    "Email": "miathomas@example.com",
+    "Id": "85cb8a31-1984-40be-8dc0-c8621484847f"
+  },
+  {
+    "Name": "Lucas Jackson",
+    "Stage": "Hired",
+    "Phone": "6789012345",
+    "Email": "lucasjackson@example.com",
+    "Id": "6c1c1c73-2017-4583-872d-29c0defe347f"
+  },
+  {
+    "Name": "Jane Smith",
+    "Stage": "Offered",
+    "Phone": "0987654321",
+    "Email": "janesmith@example.com",
+    "Id": "997d3645-d16c-4152-88be-acfd3d855b20"
+  },
+  {
+    "Name": "Alice Williams",
+    "Stage": "Offered",
+    "Phone": "5566778899",
+    "Email": "alicewilliams@example.com",
+    "Id": "5bcd6498-01d5-47a0-967d-58ec1c2707e2"
+  }
+]

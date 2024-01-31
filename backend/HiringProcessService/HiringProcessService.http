@@ -1,0 +1,6 @@
+@HiringProcessService_HostAddress = http://localhost:5264
+
+GET {{HiringProcessService_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
