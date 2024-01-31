@@ -11,11 +11,11 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:browser",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/hiring-board",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "browser": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
@@ -50,12 +50,9 @@
               "outputHashing": "all"
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": true,
               "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
           "defaultConfiguration": "production"
@@ -64,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "hiring-board:build:production"
+              "buildTarget": "hiring-board:build:production"
             },
             "development": {
-              "browserTarget": "hiring-board:build:development"
+              "buildTarget": "hiring-board:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -75,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "hiring-board:build"
+            "buildTarget": "hiring-board:build"
           }
         },
         "test": {
@@ -100,6 +97,6 @@
     }
   },
   "cli": {
-    "analytics": "fb76fb86-9ec2-43f0-9f6f-efed9503f6b5"
+    "analytics": "b4869311-c62e-426b-a072-28c80594dc28"
   }
 }

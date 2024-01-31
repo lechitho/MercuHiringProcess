@@ -1,47 +1,61 @@
 import { Component, OnInit, Pipe, PipeTransform } from '@angular/core';
-import { CandidateService, Candidate } from 'src/app/Services/candidate.service';
-import {
-  CdkDragDrop,
-  CdkDrag,
-  CdkDropList,
-  CdkDropListGroup,
-  moveItemInArray,
-  transferArrayItem,
-} from '@angular/cdk/drag-drop';
+import { CandidateService, Candidate } from '../../../Services/candidate.service';
 
 @Component({
   selector: 'app-candidate-list',
-  templateUrl: './candidate-list.component.html'
+  templateUrl: './candidate-list.component.html',
+  styleUrls: ['./candidate-list.component.css']
 })
-export class CandidateListComponent implements OnInit {
+export class CandidateListComponent implements OnInit{
 
   candidate!: Candidate[];
   isLoading: boolean = false;
   stage: any = ["Applied","Interviewing","Offered","Hired"];
-  applied!: Candidate[];
-  interviewing!: Candidate[];
-  offered!: Candidate[];
-  hired!: Candidate[];
   loadingTitle!: string;
+  currentItem!: Candidate;
+
   constructor(private CandidateService: CandidateService) {
   }
+
   ngOnInit(): void {
     this.getcandidates();
   }
+
   getcandidates() {
     this.loadingTitle = "loading candidate ..."; 
     this.isLoading = true;
     this.CandidateService.getcandidates().subscribe(
       (res: any) => {
-        this.applied = res.filter((candidate: { stage: string; }) => candidate.stage === "Applied");
-        this.interviewing = res.filter((candidate: { stage: string; }) => candidate.stage === "Interviewing");
-        this.offered = res.filter((candidate: { stage: string; }) => candidate.stage === "Offered");
-        this.hired = res.filter((candidate: { stage: string; }) => candidate.stage === "Hired");
         this.candidate = res;
         this.isLoading = false;
       }
     );
-    
   }
   
+  filterCandidates(stage: string) {
+    return this.candidate.filter((candidate) => candidate.stage === stage);
+  }
+
+  onDragStart(item: any) {
+    console.log('onDragStart');
+    this.currentItem = item;
+  }
+
+  onDrop(event: any, stage: string) {
+    event.preventDefault();
+    console.log(this.currentItem);
+    if (this.currentItem) {
+      this.currentItem.stage = stage;
+      this.CandidateService.updatecandidate(this.currentItem, this.currentItem.id).subscribe(
+        (res: any) => {
+          this.getcandidates();
+        }
+      );
+    }
+    
+  }
+
+  onDragOver(event: any) {
+    event.preventDefault();
+  }
 }

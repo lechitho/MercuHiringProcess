@@ -20,23 +20,40 @@
                     <tbody>
                         <tr>
                             <td>
-                                <ul class="tui-list">
-                                    <li *ngFor="let item of this.applied" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                <!-- <div 
+                                    cdkDropList
+                                    [cdkDropListData]="this.applied"
+                                    class="example-list"
+                                    (cdkDropListDropped)="drop($event)">
+                                    @for (item of this.applied; track item) {
+                                        <div class="example-box" cdkDrag>{{item.name}} - {{item.phone}}</div>
+                                    }
+                                </div> -->
+                                <ul class="tui-list" (drop)="onDrop($event,'Applied')" (dragover)="onDragOver($event)">
+                                    <li *ngFor="let item of filterCandidates('Applied')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
+                                        {{item.name}} - {{item.phone}}
+                                    </li>
                                 </ul>
                             </td>
                             <td>
-                                <ul class="tui-list">
-                                    <li *ngFor="let item of this.interviewing" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                <ul class="tui-list" (drop)="onDrop($event,'Interviewing')" (dragover)="onDragOver($event)">
+                                    <li *ngFor="let item of filterCandidates('Interviewing')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
+                                        {{item.name}} - {{item.phone}}
+                                    </li>
                                 </ul>
                             </td>
                             <td>
-                                <ul class="tui-list">
-                                    <li *ngFor="let item of this.hired" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                <ul class="tui-list" (drop)="onDrop($event,'Offered')" (dragover)="onDragOver($event)">
+                                    <li *ngFor="let item of filterCandidates('Offered')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
+                                        {{item.name}} - {{item.phone}}
+                                    </li>
                                 </ul>
                             </td>
                             <td>
-                                <ul class="tui-list">
-                                    <li *ngFor="let item of this.offered" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                <ul class="tui-list" (drop)="onDrop($event,'Hired')" (dragover)="onDragOver($event)">
+                                    <li *ngFor="let item of filterCandidates('Hired')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
+                                        {{item.name}} - {{item.phone}}
+                                    </li>
                                 </ul>
                             </td>
                         </tr>
