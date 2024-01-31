@@ -1,0 +1,49 @@
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4>Hiring process - Dashboard
+                <a routerLink="/employee/create" class="btn btn-primary float-end">Create</a>
+            </h4>
+        </div>
+        <div class="card-body">
+
+            <div *ngIf="isLoading; else elseTableBlock">
+                <app-loader :title="loadingTitle"></app-loader>
+            </div>
+            <ng-template #elseTableBlock>
+                <table class="table tabl-striped">
+                    <thead>
+                        <tr>
+                            <th *ngFor="let item of this.stage" scope="col">{{item}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <ul class="tui-list">
+                                    <li *ngFor="let item of this.applied" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="tui-list">
+                                    <li *ngFor="let item of this.interviewing" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="tui-list">
+                                    <li *ngFor="let item of this.hired" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                </ul>
+                            </td>
+                            <td>
+                                <ul class="tui-list">
+                                    <li *ngFor="let item of this.offered" class="tui-list__item"> {{item.name}} - {{item.phone}}</li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table> 
+            </ng-template>
+        </div>
+    </div>
+    
+</div>
