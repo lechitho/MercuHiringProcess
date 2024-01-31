@@ -2,7 +2,6 @@
     <div class="card">
         <div class="card-header">
             <h4>Hiring process - Dashboard
-                <a routerLink="/employee/create" class="btn btn-primary float-end">Create</a>
             </h4>
         </div>
         <div class="card-body">
@@ -20,41 +19,48 @@
                     <tbody>
                         <tr>
                             <td>
-                                <!-- <div 
-                                    cdkDropList
-                                    [cdkDropListData]="this.applied"
-                                    class="example-list"
-                                    (cdkDropListDropped)="drop($event)">
-                                    @for (item of this.applied; track item) {
-                                        <div class="example-box" cdkDrag>{{item.name}} - {{item.phone}}</div>
-                                    }
-                                </div> -->
-                                <ul class="tui-list" (drop)="onDrop($event,'Applied')" (dragover)="onDragOver($event)">
-                                    <li *ngFor="let item of filterCandidates('Applied')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
-                                        {{item.name}} - {{item.phone}}
-                                    </li>
-                                </ul>
+                                <div class="example-container">
+                                    <div class="cdk-drop-list example-list" (drop)="onDrop($event,'Applied')" (dragover)="onDragOver($event)">
+                                        <div class="cdk-drag example-box ng-star-inserted" *ngFor="let item of filterCandidates('Applied')" (dragstart)="onDragStart(item)" draggable="true"> 
+                                            Name: {{item.name}} <br>
+                                            Phone: {{item.phone}}<br>
+                                            Email: {{item.email}}
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                             <td>
-                                <ul class="tui-list" (drop)="onDrop($event,'Interviewing')" (dragover)="onDragOver($event)">
-                                    <li *ngFor="let item of filterCandidates('Interviewing')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
-                                        {{item.name}} - {{item.phone}}
-                                    </li>
-                                </ul>
+                                <div class="example-container">
+                                    <div class="cdk-drop-list example-list" (drop)="onDrop($event,'Interviewing')" (dragover)="onDragOver($event)">
+                                        <div class="cdk-drag example-box ng-star-inserted" *ngFor="let item of filterCandidates('Interviewing')" (dragstart)="onDragStart(item)" draggable="true"> 
+                                            Name: {{item.name}} <br>
+                                            Phone: {{item.phone}}<br>
+                                            Email: {{item.email}}
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                             <td>
-                                <ul class="tui-list" (drop)="onDrop($event,'Offered')" (dragover)="onDragOver($event)">
-                                    <li *ngFor="let item of filterCandidates('Offered')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
-                                        {{item.name}} - {{item.phone}}
-                                    </li>
-                                </ul>
+                                <div class="example-container">
+                                    <div class="cdk-drop-list example-list" (drop)="onDrop($event,'Hired')" (dragover)="onDragOver($event)">
+                                        <div class="cdk-drag example-box ng-star-inserted" *ngFor="let item of filterCandidates('Hired')" (dragstart)="onDragStart(item)" draggable="true"> 
+                                            Name: {{item.name}} <br>
+                                            Phone: {{item.phone}}<br>
+                                            Email: {{item.email}}
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                             <td>
-                                <ul class="tui-list" (drop)="onDrop($event,'Hired')" (dragover)="onDragOver($event)">
-                                    <li *ngFor="let item of filterCandidates('Hired')" class="tui-list__item" (dragstart)="onDragStart(item)" draggable="true"> 
-                                        {{item.name}} - {{item.phone}}
-                                    </li>
-                                </ul>
+                                <div class="example-container">
+                                    <div class="cdk-drop-list example-list" (drop)="onDrop($event,'Offered')" (dragover)="onDragOver($event)">
+                                        <div class="cdk-drag example-box ng-star-inserted" *ngFor="let item of filterCandidates('Offered')" (dragstart)="onDragStart(item)" draggable="true"> 
+                                            Name: {{item.name}} <br>
+                                            Phone: {{item.phone}}<br>
+                                            Email: {{item.email}}
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
                     </tbody>
