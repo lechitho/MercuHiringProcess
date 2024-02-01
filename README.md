@@ -40,12 +40,12 @@ Hiring process Service is a .Net Core API that handles candidate management. It 
   - Apply for Services, Repositories, ... be able to replace, change the implementation or technical easily
   
 - **Configuration**:
-  - Configuration options, such as the file path of the employee repository, are abstracted using configuration settings.
+  - Configuration options, such as the file path of the cadidate repository, are abstracted using configuration settings.
   
 - **Unit Tests**:
   - Use xUnit to write Unit Test (for Business (Application and Domain layers)) and Integration Test (for API, ...)
 
-## Frontend - Angular Employee Management Application
+## Frontend - Angular hiring process management Application
 
 The front end is an Angular application that allows users to manage the hiring process using the candidate Management API.
 
